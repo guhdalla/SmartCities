@@ -7,12 +7,11 @@ let arrayDado = [];
          dataType: "json",
          success: function(data) {
             
-	             for (var i = 0; i < 7 ; i++) {
+	             for (var i = 0; i < data.length ; i++) {
                       arraySensor.push(data[i].kilometrosHora);
                       arrayDado.push(data[i].datasinal);
   
             }
-                 
              grafico(arrayDado, arraySensor)
         }
     })

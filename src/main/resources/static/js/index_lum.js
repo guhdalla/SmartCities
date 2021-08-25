@@ -7,7 +7,7 @@ let arrayDado = [];
          dataType: "json",
          success: function(data) {
             
-	             for (var i = 0; i < 7; i++) {
+	             for (var i = 0; i < data["_embedded"].luminosidades.length; i++) {
                       arraySensor.push(data["_embedded"].luminosidades[i].luminosidade);
                       arrayDado.push(data["_embedded"].luminosidades[i].datasinal);
   

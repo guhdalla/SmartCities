@@ -6,13 +6,16 @@ let arrayDado = [];
          url: "http://localhost:8080/temperaturas",
          dataType: "json",
          success: function(data) {
-            
-	             for (var i = 0; i < 9; i++) {
+				
+				           
+
+
+	             for (var i = 0; i < data["_embedded"].temperaturas.length; i++) {
                       arraySensor.push(data["_embedded"].temperaturas[i].temperatura);
                       arrayDado.push(data["_embedded"].temperaturas[i].datasinal);
   
             }                   
-			 console.log(data["_embedded"].temperaturas[0].datasinal);
+			 console.log(data["_embedded"].temperaturas.length);
              grafico(arrayDado, arraySensor)
         }
     })
