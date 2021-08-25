@@ -3,16 +3,16 @@ let arrayDado = [];
  $('document').ready(function() {
      $.ajax({
          type: "GET",
-         url: "http://localhost:8080/temperaturas",
+         url: "http://localhost:8080/velocidades",
          dataType: "json",
          success: function(data) {
             
-	             for (var i = 0; i < 9; i++) {
-                      arraySensor.push(data["_embedded"].temperaturas[i].temperatura);
-                      arrayDado.push(data["_embedded"].temperaturas[i].datasinal);
+	             for (var i = 0; i < 7 ; i++) {
+                      arraySensor.push(data[i].kilometrosHora);
+                      arrayDado.push(data[i].datasinal);
   
-            }                   
-			 console.log(data["_embedded"].temperaturas[0].datasinal);
+            }
+                 
              grafico(arrayDado, arraySensor)
         }
     })
@@ -26,7 +26,7 @@ function grafico(arrayDado,arraySensor){
         data: {
             labels: arrayDado,
             datasets: [{
-                label: "GRAUS CELSIUS (ºC)",
+                label: "Velocidade em KM/h",
                 backgroundColor: 'rgb(255,99,132)',
                 borderColor: [
                     'rgb(255,99,132)',
@@ -45,7 +45,8 @@ function grafico(arrayDado,arraySensor){
             plugins: {
                 title: {
                     display: true,
-                    text: 'GRÁFICO DE TEMPERATURA - SMARTCITIES',
+                    text: 'SENSOR ANENÔMETRO - VELOCIDADE DO VENTO EM KM/h',
+
                 },
                 legend: {
                     position: 'bottom'

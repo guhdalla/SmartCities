@@ -3,40 +3,29 @@ let arrayDado = [];
  $('document').ready(function() {
      $.ajax({
          type: "GET",
-         url: "http://localhost:8080/luminosidadeEndpoint",
+         url: "http://localhost:8080/luminosidades",
          dataType: "json",
          success: function(data) {
             
-	             for (var i = 0; i < 8; i++) {
-                      arraySensor.push(data["_embedded"].temperaturas[i].temperatura);
-                      arrayDado.push(data["_embedded"].temperaturas[i].datasinal);
-                      if(data["_embedded"].temperaturas[i].datasinal != null){
-                          i= -1
-                      }     
-             }
-
-            alert(arrayDado)
-            alert(arraySensor)
-            alert([data["_embedded"].temperaturas].length)
-                   
+	             for (var i = 0; i < 7; i++) {
+                      arraySensor.push(data["_embedded"].luminosidades[i].luminosidade);
+                      arrayDado.push(data["_embedded"].luminosidades[i].datasinal);
+  
+            }                   
              grafico(arrayDado, arraySensor)
-             
-    
-
-            }
+        }
     })
 
  })
-
-function grafico(arrayDado, arraySensor){
-    let ctx = document.getElementById('chart').getContext('2d');
-
+function grafico(arrayDado,arraySensor){
+	
+	let ctx = document.getElementById('chart').getContext('2d');
     let chart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: arrayDado,
             datasets: [{
-                label: "custo por X",
+                label: "LUX",
                 backgroundColor: 'rgb(255,99,132)',
                 borderColor: [
                     'rgb(255,99,132)',
@@ -55,7 +44,7 @@ function grafico(arrayDado, arraySensor){
             plugins: {
                 title: {
                     display: true,
-                    text: 'CAC - CUSTO DE AQUISIÇÃO DE CLIENTE',
+                    text: 'TAXA DE LUMINOSIDADE EM LUX',
                 },
                 legend: {
                     position: 'bottom'
