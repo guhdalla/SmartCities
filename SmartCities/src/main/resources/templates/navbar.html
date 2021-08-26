@@ -1,0 +1,44 @@
+<nav th:fragment="navbar(item)"
+	class="navbar navbar-light navbar-expand-md d-xxl-flex align-items-xxl-center"
+	id="navbar">
+	<div class="container-fluid">
+		<a class="navbar-brand" id="navbar-brand" href="#">EPICTASK<br></a>
+		<div
+			class="collapse navbar-collapse d-xxl-flex justify-content-xxl-center"
+			id="navcol-1">
+			<ul
+				class="navbar-nav d-xxl-flex flex-grow-1 justify-content-xxl-center align-items-xxl-end"
+				id="nav-1">
+				<li th:if="${item == 'TEMPERATURA'}"
+					class="nav-item d-xxl-flex align-items-xxl-center"
+					id="item-dashboard-select"><a class="nav-link" id="nav-item"
+					href="/temperatura"><i class="fa fa-dashboard" style="margin-right: 5px;"></i>Temperatura</a></li>
+				<li th:unless="${item == 'TEMPERATURA'}"
+					class="nav-item d-xxl-flex align-items-xxl-center"
+					id="item-dashboard"><a class="nav-link" id="nav-item" href="/temperatura"><i
+						class="fa fa-dashboard" style="margin-right: 5px;"></i>Temperatura</a></li>
+
+				<li th:if="${item == 'LUMINOSIDADE'}"
+					class="nav-item d-xxl-flex align-items-xxl-center"
+					id="item-tarefas-select"><a class="nav-link" id="nav-item"
+					href="/luminosidade"><i class="fa fa-tasks" style="margin-right: 5px;"></i>Luminosidade</a></li>
+				<li th:unless="${item == 'LUMINOSIDADE'}"
+					class="nav-item d-xxl-flex align-items-xxl-center"
+					id="item-tarefas"><a class="nav-link" id="nav-item"
+					href="/luminosidade"><i class="fa fa-tasks" style="margin-right: 5px;"></i>Luminosidade</a></li>
+
+				<li th:if="${item == 'VELOCIDADE'}"
+					class="nav-item d-xxl-flex align-items-xxl-center"
+					id="item-concluidas-select"><a class="nav-link" id="nav-item"
+					href="/velocidade-vento"><i class="fa fa-check-square-o"
+						style="margin-right: 5px;"></i>Velocidade do Vento</a></li>
+				<li th:unless="${item == 'VELOCIDADE'}"
+					class="nav-item d-xxl-flex align-items-xxl-center"
+					id="item-concluidas"><a class="nav-link" id="nav-item"
+					href="/velocidade-vento"><i class="fa fa-check-square-o"
+						style="margin-right: 5px;"></i>Velocidade do Vento</a></li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
