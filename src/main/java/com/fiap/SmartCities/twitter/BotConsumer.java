@@ -7,14 +7,9 @@ import com.github.redouane59.twitter.signature.TwitterCredentials;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Files;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -23,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BotConsumer {
-    private static final int INTERVALO_MINIMO_HORAS = 48;
+    private static final int INTERVALO_MINIMO_HORAS = 15;
     private static final boolean POSTAR_TWEET_IGUAL = false;
     private static final boolean POSTAR_TWEET = true;
 
@@ -34,7 +29,7 @@ public class BotConsumer {
     private static final TwitterClient TWITTER_CLIENT;
 
     private static final Map<Integer, String> VELOCIDADES = new HashMap<Integer, String>();
-    private static final Duration INTERVALO_MINIMO = Duration.ofHours(INTERVALO_MINIMO_HORAS).minusMinutes(9);
+    private static final Duration INTERVALO_MINIMO = Duration.ofSeconds(INTERVALO_MINIMO_HORAS).minusMinutes(9);
 
     static {
         try {
