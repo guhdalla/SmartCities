@@ -8,7 +8,7 @@ let arrayDado = [];
          success: function(data) {
             
 	             for (var i = 0; i < data.length ; i++) {
-                      arraySensor.push(data[i].kilometrosHora);
+                      arraySensor.push(data[i].velocidade);
                       arrayDado.push(data[i].datasinal);
   
             }
@@ -26,15 +26,15 @@ function grafico(arrayDado,arraySensor){
             labels: arrayDado,
             datasets: [{
                 label: "Velocidade em KM/h",
-                backgroundColor: 'rgb(255,99,132)',
+                backgroundColor: '#aa78fd',
                 borderColor: [
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)'
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd'
                 ],
                 data: arraySensor
             }]

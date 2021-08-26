@@ -7,6 +7,8 @@ import javax.persistence.*;
 import lombok.*;
 
 @Table(name="TB_SENSOR_VELOCIDADE_TEMPO")
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @SequenceGenerator(name = "VelVento", allocationSize = 1, sequenceName = "SQ_TB_SENSOR_VEL_VENTO")
 @Data
@@ -17,6 +19,6 @@ public class VelocidadeVento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VelVento")
 	private Long id;
-	private double kilometrosHora;
+	private Double velocidade;
 	public String DATASINAL = dtf.format(LocalDateTime.now());
 }

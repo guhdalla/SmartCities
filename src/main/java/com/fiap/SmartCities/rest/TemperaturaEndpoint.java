@@ -28,7 +28,7 @@ public class TemperaturaEndpoint {
 		return repo.findAll();
 	}
 	
-	@PostMapping("/temperaturas")
+	@PostMapping
 	public Temperatura addTemp(Temperatura temp) {
 		return repo.save(temp);
 	}

@@ -11,6 +11,8 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fiap.SmartCities.model.VelocidadeVento;
@@ -19,17 +21,22 @@ import com.fiap.SmartCities.repository.VelocidadeVentoRepository;
 
 @RestController
 public class VelocidadeEndpoint {
-	
-	@Autowired
-	VelocidadeVentoRepository repo;
-	
-//	@GET
-//	public List<VelocidadeVento> index() {
-//		return repo.findAll();
-//	}
-	
-	@GetMapping("/velocidades")
-	public List<VelocidadeVento> index() {
-		return repo.findAll();
-	}
+
+    @Autowired
+    VelocidadeVentoRepository repo;
+
+//    @GET
+//    public List<VelocidadeVento> index() {
+//        return repo.findAll();
+//    }
+
+    @GetMapping("/velocidades")
+    public List<VelocidadeVento> index() {
+        return repo.findAll();
+    }
+
+    @PostMapping("/velocidades")
+    public VelocidadeVento add(@RequestBody VelocidadeVento velocidadeVento) {
+        return repo.save(velocidadeVento);
+    }
 }

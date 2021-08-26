@@ -26,15 +26,15 @@ function grafico(arrayDado,arraySensor){
             labels: arrayDado,
             datasets: [{
                 label: "LUX",
-                backgroundColor: 'rgb(255,99,132)',
+                backgroundColor: '#aa78fd',
                 borderColor: [
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)',
-                    'rgb(255,99,132)'
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd',
+                    '#aa78fd'
                 ],
                 data: arraySensor
             }]

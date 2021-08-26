@@ -4,8 +4,6 @@ import java.util.UUID;
 
 import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -21,32 +19,24 @@ import lombok.NoArgsConstructor;
 @Getter
 public class MqttConnection {
 
-	private static String broker = "tcp://broker.hivemq.com:1883";
-	private String clientId = "clientId-service";
+	private String broker = "tcp://broker.hivemq.com:1883";
 	public static MqttAsyncClient client;
 	private static MqttConnection instance;
 
-	public static void connectMqtt() {
+	public void connectMqtt() {
 
 		MemoryPersistence persistence = new MemoryPersistence();
 
 		try {
 			client = new MqttAsyncClient(broker, UUID.randomUUID().toString(), persistence);
 
-//			MqttConnectOptions connOpts = new MqttConnectOptions();
-//			connOpts.setUserName("emqx_test");
-//			connOpts.setPassword("emqx_test_password".toCharArray());
-//			connOpts.setCleanSession(true);
-			
 			OnMessageCallback myCallBack = new OnMessageCallback();
 			client.setCallback(myCallBack);
 			
 			IMqttToken token = client.connect();
 			token.waitForCompletion();
-
-			System.out.println("Connecting to broker: " + broker);
-//			client.connect(connOpts);
-			System.out.println("Connected");
+			
+			System.out.println("Connected MQTT");
 			sub("bgmbnewgen8462/smartcities/temperatura", 0);
 			sub("bgmbnewgen8462/smartcities/luminosidade", 0);
 			sub("bgmbnewgen8462/smartcities/velocidadevento", 0);
