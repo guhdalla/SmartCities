@@ -12,11 +12,11 @@ import lombok.*;
 @Data
 public class VelocidadeVento {
 	
-	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "VelVento")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VelVento")
 	private Long id;
 	private double kilometrosHora;
-	private String DATASINAL = dtf.format(LocalDateTime.now());
+	public String DATASINAL = dtf.format(LocalDateTime.now());
 }

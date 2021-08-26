@@ -16,10 +16,7 @@ import com.fiap.SmartCities.repository.LuminosidadeRepository;
 @Controller
 public class LuminosidadeController {
 	
-	@Autowired
-	LuminosidadeRepository repo;
-	
-	@RequestMapping("/lum")
+	@RequestMapping("/luminosidade")
 	public String index() {
 		return "luminosidade";
 	}

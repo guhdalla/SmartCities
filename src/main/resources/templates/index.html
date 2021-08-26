@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>Untitled</title>
+<link th:rel="stylesheet"
+	th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+<link th:rel="stylesheet" th:href="@{/assets/css/styles.css}" />
+</head>
+
+<body>
+	<div class="d-flex" style="padding: 50px;">
+		<div class="col">
+			<a href="/temperatura" target="_blank">
+				<h2 class="text-center">
+					Temperatura<br>
+				</h2> <!-- Progress bar 1 -->
+				<div class="progress mx-auto" data-value='25'>
+					<span class="progress-left"> <span
+						class="progress-bar border-primary"></span>
+					</span> <span class="progress-right"> <span
+						class="progress-bar border-primary"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">
+							25<sup class="small">C</sup>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="/velocidade-vento" target="_blank">
+				<h2 class="text-center" style="color: rgb(33, 37, 41);">Velocidade
+					do Vento</h2> <!-- Progress bar 1 -->
+				<div class="progress mx-auto" data-value='42'>
+					<span class="progress-left"> <span
+						class="progress-bar border-primary"></span>
+					</span> <span class="progress-right"> <span
+						class="progress-bar border-primary"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold">
+							42<sup class="small">km/h</sup>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="/luminosidade" target="_blank">
+				<h2 class="text-center">
+					Luminosidade<br>
+				</h2> <!-- Progress bar 1 -->
+				<div class="progress mx-auto" data-value='342'>
+					<span class="progress-left"> <span
+						class="progress-bar border-primary"></span>
+					</span> <span class="progress-right"> <span
+						class="progress-bar border-primary"></span>
+					</span>
+					<div
+						class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						<div class="h2 font-weight-bold" th:text="${lux.luminosidade}">
+							342<sup class="small">LUX</sup>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div>
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th class="text-center">Data</th>
+						<th class="text-center">Temperatura(C)</th>
+						<th class="text-center">Velocidade do Vento(km/h)<br></th>
+						<th class="text-center">Luminosidade(LUX)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-center">24/08/2021 12:15:40</td>
+						<td class="text-center">25</td>
+						<td class="text-center">42</td>
+						<td class="text-center">342</td>
+					</tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{assets/js/jquery.min.js}"></script>
+	<script th:src="@{assets/js/untitled.js}"></script>
+</body>
+
+</html>

@@ -14,12 +14,8 @@ import com.fiap.SmartCities.repository.VelocidadeVentoRepository;
 @Controller
 public class VelocidadeVentoController {
 	
-	@Autowired
-	VelocidadeVentoRepository repository;
-	
-	
-	@RequestMapping("/velocidadeVento")
-	public String cadastrarUser() {
+	@RequestMapping("/velocidade-vento")
+	public String index() {
 		return "velocidadeVento";
 	}
 }

@@ -13,13 +13,13 @@ import lombok.*;
 @SequenceGenerator(name = "luminosidade", allocationSize = 1, sequenceName = "SQ_TB_SENSOR_LUMINOSIDADE")
 public class Luminosidade {
 
-	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "luminosidade")
 	private Long id;
 	private double luminosidade;
-	private String DATASINAL = dtf.format(LocalDateTime.now());
+	public String DATASINAL = dtf.format(LocalDateTime.now());
 	
 	
 	

@@ -16,10 +16,18 @@ import com.fiap.SmartCities.repository.TemperaturaRepository;
 public class TemperaturaController {
 	
 	@Autowired
-	TemperaturaRepository repo;
+	TemperaturaRepository repositoryTemp;
 	
-	@RequestMapping("/temp")
+	@RequestMapping("/temperatura")
 	public String index() {
 		return "temperatura";
+	}
+	
+	public void create(Double temperatura) {
+		Temperatura t = new Temperatura();
+		t.setId(1L);
+		t.setTemperatura(temperatura);
+		t.setDATASINAL("05:05:05");
+		repositoryTemp.save(t);
 	}
 }
