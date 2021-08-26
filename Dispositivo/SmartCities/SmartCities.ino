@@ -8,7 +8,7 @@
 
 //WiFi
 const char* SSID = "BIN 2.4";                // SSID / nome da rede WiFi que deseja se conectar
-const char* PASSWORD = "95609560";   // Senha da rede WiFi que deseja se conectar
+const char* PASSWORD = "********";   // Senha da rede WiFi que deseja se conectar
 WiFiClient wifiClient;
 
 //MQTT Server
