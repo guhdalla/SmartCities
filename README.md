@@ -41,7 +41,9 @@ cls
 
 ## Funcionalidades
 
-:heavy_check_mark: Verificação de temperatura  
+:heavy_check_mark: Verificação de temperatura, velocidade do vento, luminosidade.  
+
+:heavy_check_mark: Persistencia de dados  
 
 :heavy_check_mark: Integração de API do Twitter 
 
