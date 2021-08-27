@@ -15,7 +15,7 @@ Existem diversas ferramentas para integração e diversas formas de implementar,
 
 ## Diagrama do projeto
 
-**Essa é a imagem do NODE-RED plataforma usada para integração entre MQTT e TWITTER**
+**Essa é a imagem do NODE-RED plataforma usada para integração entre MQTT e TWITTER e também a persistencia de dados**
 
 <img src="/diagrama.png" width="550">
 
